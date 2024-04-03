@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" [routerLink]="['home']">
+    <img src="assets/img/Oauth_logo.svg" alt="logo" style="width:3rem">
+    <span class="ms-3 me-3">Auth App</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="dropdown"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse row p-2" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto col-6">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['']" >Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['prices']" >Prices</a>
+      </li>
+      <li class="nav-item"
+          routerLinkActive="active"
+          *ngIf="auth.loggedIn">
+        <a class="nav-link" [routerLink]="['admin']" >Admin</a>
+      </li>
+    </ul>
+    <span class="navbar-text text-white col-6 d-flex justify-content-end">
+      <button (click)="auth.login()" *ngIf="!auth.loggedIn"
+      class="btn btn-primary">
+        Login
+      </button>
+      <button (click)="auth.logout()" *ngIf="auth.loggedIn"
+      class="btn btn-primary">
+        Logout
+      </button>
+    </span>
+  </div>
+</nav>
+

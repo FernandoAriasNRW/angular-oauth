@@ -1,0 +1,13 @@
+<h1>Perfil Usuario</h1>
+
+<div class="row" *ngIf="profile">
+  <div class="container col-6">
+    <p class="mt-4 mb-1" >Nombre: {{ profile.name }}</p>
+    <p class="mb-1" >Email: {{ profile.email }}</p>
+    <p class="mb-1" *ngIf="profile.email_verified">Usuario Verificado</p>
+    <p class="mb-1" *ngIf="!profile.email_verified">Usuario No Verificado</p>
+  </div>
+  <div class="container col-6 mb-4">
+    <img src="{{ profile.picture }}" alt="profile picture" class="img-thumbnail" style="width:25%">
+  </div>
+</div>
