@@ -24,4 +24,7 @@ jobs:
         with:
           push: true
           tags: ferwinnrw/angular-oauth-app:latest
+          build-contexts:
+            alpine=docker-image://node:20-alpine
+            nginx=docker-image://nginx:1.17.1-alpine
           context: .
