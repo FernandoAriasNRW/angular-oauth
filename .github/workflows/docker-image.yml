@@ -28,3 +28,4 @@ jobs:
             alpine=docker-image://node:20-alpine
             nginx=docker-image://nginx:1.17.1-alpine
           context: .
+          file: Dockerfile
