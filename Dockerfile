@@ -1,4 +1,4 @@
-FROM alpine AS build
+FROM node:20-alpine AS build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 
 RUN npm run build --prod
 
-FROM nginx
+FROM nginx:1.17.1-alpine
 
 COPY --from=build /app/dist/ang-dockerized-app /share/nginx/html
 
